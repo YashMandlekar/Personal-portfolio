@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yash Mandlekar | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gradient: linear-gradient(to right, #ff6ec4, #7873f5, #4ADEDE, #62efab);
+      --bg-dark: #0d0d0d;
+      --text-light: #222;
+      --text-dark: #eee;
+      --accent: #ff007f;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--gradient);
+      background-size: 400% 400%;
+      animation: gradientFlow 20s ease infinite;
+      color: var(--text-light);
+      transition: all 0.3s ease;
+    }
+
+    @keyframes gradientFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.8rem;
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 1rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      background: #ff007f33;
+      color: var(--accent);
+    }
+
+    .section {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #fff;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .about, .skills, .contact {
+      background: rgba(255,255,255,0.85);
+      border-radius: 10px;
+      margin: 1rem auto;
+      max-width: 900px;
+      padding: 2rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .project-card {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px) scale(1.02);
+    }
+
+    .project-card img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    .progress-container {
+      text-align: left;
+    }
+
+    .progress {
+      background: #ddd;
+      border-radius: 20px;
+      margin-bottom: 1rem;
+      overflow: hidden;
+    }
+
+    .bar {
+      height: 20px;
+      width: 0;
+      border-radius: 20px;
+      transition: width 1s ease-in-out;
+      background: linear-gradient(to right, #ff007f, #ff9a00);
+    }
+
+    .tech-icons {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .tech-icons img {
+      width: 60px;
+      transition: transform 0.3s;
+    }
+
+    .tech-icons img:hover {
+      transform: scale(1.2);
+    }
+
+    #scrollTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--accent);
+      color: #fff;
+      padding: 12px;
+      border: none;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: background 0.3s;
+    }
+
+    #scrollTop:hover {
+      background: #e60073;
+    }
+#scrollTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: linear-gradient(135deg, #ff6ec4, #7873f5);
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+#scrollTop:hover {
+  background: linear-gradient(135deg, #f43b86, #5c6bf2);
+  transform: scale(1.05);
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Yash</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </header>
+
+  <section id="home" class="section">
+    <h1>Hello, I'm Yash 👋</h1>
+    <h2 id="typewriter"></h2>
+  </section>
+
+  <section id="about" class="section about">
+    <h2>About Me</h2>
+    <p>I'm Yash, a first-year engineering student passionate about becoming a successful engineer. I'm developing skills in web development and building real IoT solutions.</p>
+  </section>
+
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <img src="https://via.placeholder.com/300x150.png?text=Smart+Plant+Monitor" alt="Smart Plant Monitor">
+        <h3>Smart Plant Monitoring</h3>
+        <p>IoT system using Blynk to track plant health metrics.</p>
+      </div>
+      <div class="project-card">
+        <img src="https://via.placeholder.com/300x150.png?text=Door+Opener" alt="Auto Door Opener">
+        <h3>Auto Door Opener</h3>
+        <p>Sensor-based system to automatically open doors when a person is near.</p>
+      </div>
+      <div class="project-card">
+        <img src="https://via.placeholder.com/300x150.png?text=Web+Mini+Projects" alt="Web Projects">
+        <h3>Web Projects</h3>
+        <p>Multiple responsive, interactive websites created during learning phase.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="section skills">
+    <h2>Skills</h2>
+    <div class="progress-container">
+      <label>HTML</label>
+      <div class="progress"><div class="bar" style="width: 85%"></div></div>
+      <label>CSS</label>
+      <div class="progress"><div class="bar" style="width: 75%"></div></div>
+      <label>JavaScript</label>
+      <div class="progress"><div class="bar" style="width: 65%"></div></div>
+    </div>
+    <div class="tech-icons">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" title="HTML5">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" title="CSS3">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" title="JavaScript">
+      <img src="https://cdn-icons-png.flaticon.com/512/3190/3190604.png" title="Blynk">
+      <img src="https://cdn-icons-png.flaticon.com/512/1078/1078128.png" title="IoT">
+    </div>
+  </section>
+
+  <section id="contact" class="section contact">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:mandlekarvansh@gmail.com">mandlekarvansh@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/yash-mandlekar">YASH MANDLEKAR</a></p>
+    <p>Instagram: <a href="https://instagram.com/yash____21">@yash____21</a></p>
+  </section>
+
+  <footer class="section">
+    <p>Made with ❤️ by Yash Mandlekar © 2025</p>
+  </footer>
+
+  <button id="scrollTop">⬆ Scroll to Top</button>
+
+
+  <script>
+    // Typewriter
+    const typewriter = document.getElementById("typewriter");
+    const phrases = ["Future Engineer", "Web Dev Learner", "IoT Creator"];
+    let phraseIndex = 0, charIndex = 0;
+    let isErasing = false, delay = 100;
+
+    function type() {
+      const current = phrases[phraseIndex];
+      if (!isErasing) {
+        typewriter.textContent = current.substring(0, charIndex++);
+        if (charIndex <= current.length) setTimeout(type, delay);
+        else setTimeout(() => { isErasing = true; setTimeout(type, 1500); }, 1000);
+      } else {
+        typewriter.textContent = current.substring(0, charIndex--);
+        if (charIndex >= 0) setTimeout(type, 50);
+        else {
+          isErasing = false;
+          phraseIndex = (phraseIndex + 1) % phrases.length;
+          setTimeout(type, 300);
+        }
+      }
+    }
+    type();
+
+    // Scroll to top
+    const scrollTopBtn = document.getElementById("scrollTop");
+    window.addEventListener("scroll", () => {
+      scrollTopBtn.style.display = window.scrollY > 200 ? "block" : "none";
+    });
+    scrollTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+</body>
+</html>
